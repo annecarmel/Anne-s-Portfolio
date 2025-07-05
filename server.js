@@ -9,6 +9,11 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ✅ EXPLICIT ROOT ROUTE
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // API route to handle your Contact Me form
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
