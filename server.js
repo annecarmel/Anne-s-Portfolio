@@ -35,6 +35,8 @@ app.post('/contact', (req, res) => {
   res.json({ success: true });
 });
 
+const PORT = process.env.PORT || 3000; // Use the PORT environment variable on Render
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`server running on port ${PORT}`);
 });
+
