@@ -1,0 +1,840 @@
+/* === SERVICES SECTION === */
+.services-section {
+  padding: 100px 0;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Your existing nav & overlay stay same! */
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  height: 250px;
+  overflow: visible;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  flex: 0 0 220px;
+  height: 180px;
+  background: #111;
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.carousel-card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.carousel-card h3 {
+  color: #00ffff; /* neon blue */
+  margin-bottom: 8px;
+}
+
+.carousel-card p {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+.carousel-card.active {
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 1;
+  z-index: 2;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff55;
+}
+
+.carousel-card.left {
+  transform: translate(-130%, -50%) scale(0.75);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.carousel-card.right {
+  transform: translate(-130%, -50%) scale(0.75);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  flex: 0 0 220px;
+  height: 180px;
+  background: #111;
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+  display: flex;            /* NEW: ensure vertical stacking */
+  flex-direction: column;   /* NEW: vertical layout */
+  align-items: center;      /* NEW: center align */
+  text-align: center;       /* NEW: center text */
+}
+
+.carousel-card h3 {
+  color: #00ffff;
+  margin-bottom: 8px;
+  font-size: 1.3rem; /* or 1.4rem for bigger */
+}
+
+.carousel-card.left {
+  transform: translate(-150%, -50%) scale(0.75); /* balanced gap */
+}
+
+.carousel-card.right {
+  transform: translate(50%, -50%) scale(0.75); /* balanced gap */
+  justify-content: center; 
+  text-align: center;
+}
+
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; /* Keep all content centered horizontally */
+  text-align: center;  /* Keep text centered */
+}
+
+
+
+/* === PROJECTS SECTION === */
+.projects-section {
+  padding: 80px 5%;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.filter-wrapper select,
+.search-wrapper input {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.filter-wrapper select:focus,
+.search-wrapper input:focus {
+  outline: 2px solid #00ffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffff88;
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  color: #00ffff;
+  font-size: 1.2rem;
+  margin: 10px 15px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin: 0 15px 10px;
+}
+
+.project-card .tags {
+  font-size: 0.8rem;
+  margin: 0 15px 10px;
+  color: #aaa;
+}
+
+.project-card .buttons {
+  display: flex;
+  gap: 10px;
+  margin: 0 15px 15px;
+}
+
+.project-card .buttons a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid #00ffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.load-more {
+  display: block;
+  margin: 40px auto 0;
+  background: none;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-more:hover {
+  background: #00ffff22;
+}
+
+.filter-wrapper select {
+  background: rgba(0, 0, 0, 0.8); /* solid black or semi-transparent */
+  color: #fff;
+  border: 1px solid #00ffff; /* optional: neon border! */
+  padding: 10px 15px;
+  border-radius: 6px;
+  appearance: none; /* remove default arrow for better styling */
+}
+
+.filter-wrapper {
+  position: relative;
+}
+
+.filter-wrapper::after {
+  content: '▼'; /* custom dropdown arrow */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00ffff; /* arrow color */
+  pointer-events: none;
+}
+
+.filter-wrapper select option {
+  background: #000; /* fixes the options background! */
+  color: #fff;
+}
+
+.filter-wrapper select {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* === FILTER DROPDOWN === */
+.filter-wrapper {
+  position: relative;
+}
+
+.filter-wrapper select {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #000; /* base is black border */
+  padding: 10px 15px;
+  border-radius: 6px;
+  appearance: none; /* remove default arrow */
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+/* Custom V arrow */
+.filter-wrapper::after {
+  content: '▾';  /* simple down V arrow */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff; /* white arrow */
+  pointer-events: none;
+}
+
+/* Options inside dropdown */
+.filter-wrapper select option {
+  background: #000;
+  color: #fff;
+}
+
+/* Focus state for filter */
+.filter-wrapper select:focus {
+  outline: none;   /* no default outline */
+  border: 1px solid #00ffff; /* neon border only on focus */
+}
+
+/* === SEARCH INPUT === */
+.search-wrapper input {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #000; /* base black border */
+  padding: 10px 15px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.search-wrapper input:focus {
+  outline: none;
+  border: 1px solid #00ffff; /* neon on focus */
+}
+
+/* Mark it visually */
+.project-card.upcoming {
+  position: relative;
+  opacity: 0.7;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: #00ffff;
+  color: black;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Make buttons look inactive */
+.project-card.upcoming .buttons a.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  border: 1px dashed #00ffff;
+}
+
+.project-card {
+  width: 280px;      /* Fixed width */
+  height: 380px;     /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Push content to fit nicely */
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;   /* Fixed thumbnail height */
+  object-fit: cover;
+}
+
+.project-card.upcoming {
+  position: relative;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00ffff;
+  color: black;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card .buttons a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid #00ffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.project-card .buttons a:hover {
+  background: #00ffff22;
+  color: #000;
+  box-shadow: 0 0 10px #00ffff88;
+}
+
+.project-card .buttons a:hover {
+  background: #00ffff22;
+  color: #fff; /* force text to white */
+  box-shadow: 0 0 10px #00ffff88;
+}
+
+.projects-section h2 {
+  text-align: center;   /* Center align text */
+  font-size: 2.8rem;    /* Big enough to stand out */
+  color: #f6fcfc;       /* Match your accent color */
+  margin-bottom: 50px;  /* Space below heading */
+}
+
+.projects-section {
+  text-align: center;   /* This centers all block elements inside */
+}
+
+
+/* === PROJECT DOCUMENTARY SECTION === */
+.project-docu-section {
+  padding: 100px 5%;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.project-docu-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.docu-carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.docu-carousel {
+  position: relative;
+  height: 500px;
+  overflow: visible;
+}
+
+.docu-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 20px;
+  width: 800px;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.docu-card.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 0 20px #00ffff88;
+}
+
+.docu-card.left {
+  transform: translate(-150%, -50%) scale(0.75);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.docu-card.right {
+  transform: translate(50%, -50%) scale(0.75);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.docu-card .video-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.docu-card iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.docu-card h3 {
+  font-size: 1.5rem;
+  color: #00ffff;
+}
+
+.docu-card p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.docu-carousel-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.docu-carousel-btn.prev {
+  left: 20px;
+}
+
+.docu-carousel-btn.next {
+  right: 20px;
+}
+
+/* === Testimonials Section === */
+.testimonials-section {
+  padding: 60px 20px;
+  background: #111; /* Match your site's dark theme */
+  text-align: center;
+}
+
+.testimonials-section .section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #fff; /* Keep your text white like other sections */
+}
+
+.testimonials-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 30px;
+  color: #eee;
+  min-width: 300px;
+  max-width: 300px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.testimonials-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonials-row::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+.certifications-section {
+  padding: 50px 0;
+  text-align: center;
+  background: #000; /* Match your website background */
+}
+
+.certifications-section h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.certification-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cert-card {
+  width: 250px; /* adjust to your liking */
+  height: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.cert-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* ===== About & Contact Section ===== */
+.about-contact-section {
+  padding: 60px 20px;
+  background: #111; /* Adjust to match your overall theme */
+  color: #fff;
+}
+
+.about-contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-me,
+.contact-me {
+  flex: 1 1 400px;
+}
+
+.about-me h2,
+.contact-me h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-me p {
+  line-height: 1.6;
+}
+
+.contact-me form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-me .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-me input,
+.contact-me textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-me button {
+  padding: 12px 20px;
+  background: #00b894; /* Use your theme accent color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contact-me button:hover {
+  background: #019875;
+}
+
+@media (max-width: 768px) {
+  .about-contact-container {
+    flex-direction: column;
+  }
+}
+
+/* === Social Icons in About === */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.8rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ffff; /* Neon blue hover effect */
+}
+
+/* === Contact Form Button Updated === */
+.contact-me button {
+  padding: 12px 20px;
+  background: #00ffff; /* Neon blue */
+  color: #111; /* Dark text on neon */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contact-me button:hover {
+  background: #00dada; /* Slightly darker neon blue on hover */
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #111; /* match your site’s background */
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.project-card .buttons {
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  gap: 10px;                /* Adds space between buttons */
+  margin-top: 10px;         /* Space above buttons */
+}
+
+.project-card .tags {
+  margin-bottom: 20px;      /* Space below tags */
+}
+
+.project-card.featured {
+  position: relative;
+  border: 2px solid gold; /* or your style */
+}
+
+.star-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: gold;
+  color: black;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.featured-projects {
+  margin-bottom: 40px; /* Or any spacing you want */
+}
+
+.featured-projects {
+  margin-bottom: 40px; /* Adds nice spacing before main projects */
+}
+
+.featured-projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.award-ribbon {
+  position: absolute;
+  bottom: 15px;    /* bottom edge */
+  left: -40px;    /* shift ribbon right */
+  background: #e74c3c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 50px;
+  transform: rotate(45deg); /* note: positive 45 for bottom-right */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  z-index: 2;
+  text-align: center;
+}
+
+.project-card.ongoing .coming-soon-overlay {
+  background: #FFA500; /* example: orange for ongoing */
+  color: #fff;
+}
+
+.download-btn {
+  display: inline-block;   /* For <a> tag */
+  padding: 12px 20px;      /* Same as Send Message */
+  background: #00ffff;
+  color: #111;             /* ✅ Same text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;       /* ✅ Same text size */
+  text-decoration: none;   /* Remove underline */
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #00dada;     /* Same hover background */
+  color: #111;             /* ✅ Keep same text color */
+}
+
+.download-btn:active {
+  background: #000;
+  color: #00ffff;          /* Same click effect */
+}
+
+
+

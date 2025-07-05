@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Star Light - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Your homepage styles (unchanged) */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    html, body {
+      height: 100%;
+      background-color: black;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background-color: transparent;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      transition: top 0.3s;
+    }
+    .nav-links {
+      display: flex; justify-content: center; gap: 10px;
+    }
+    .nav-links a {
+      color: white; text-decoration: none; font-weight: bold;
+      font-size: 0.95rem; padding: 6px 12px; border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.1); color: #ccc;
+    }
+    .overlay {
+      background: linear-gradient(to bottom right, #000000, #111111);
+      width: 100%; height: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 100px 60px 60px; flex-grow: 1;
+    }
+    .left {
+      color: white; display: flex; flex-direction: column; justify-content: center;
+      font-size: 2rem; max-width: 50%;
+    }
+    .left h1 { font-size: 2.5rem; }
+    .typewriter-line { display: flex; align-items: baseline; }
+    .static-a { font-size: 2.5rem; color: white; margin-right: 8px; display: inline-block; }
+    .typewriter-text {
+      white-space: nowrap; overflow: hidden; display: inline-block; vertical-align: baseline;
+      font-size: 2.5rem; font-weight: bold;
+    }
+    .cursor {
+      display: inline-block; color: white; font-weight: bold; font-size: 2.5rem; line-height: 1;
+      vertical-align: baseline; animation: blink 0.7s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .right { display: flex; align-items: flex-end; justify-content: center; }
+    .right a { display: block; }
+    .right img { height: 100vh; width: auto; object-fit: cover; cursor: pointer; }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#project-docu">Documentaries</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#certifications">Certifications</a>
+      <a href="https://medium.com/@annecarmel" target="_blank">Blog</a>
+      <a href="#about-contact">About</a>
+      <a href="#about-contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="overlay" id="home">
+    <div class="left">
+      <h1>Hi, I am</h1>
+      <div class="typewriter-line">
+        <span class="static-a">a</span>
+        <span class="typewriter-text" id="typewriter-text"></span><span class="cursor">|</span>
+      </div>
+    </div>
+    <div class="right">
+      <a href="#home">
+        <img src="assets/Anne.png" alt="Star Light Image" />
+      </a>
+    </div>
+  </div>
+
+  <!-- === SERVICES SECTION === -->
+  <section id="services" class="services-section">
+    <h2>My Services</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-card">
+          <div class="icon">🤖</div>
+          <h3>AI & Automation</h3>
+          <p>Smart AI tools & automation solutions to <br> boost your business.</p>
+        </div>
+        <div class="carousel-card">
+          <div class="icon">☁️</div>
+          <h3>SaaS Products</h3>
+          <p>Cloud-based scalable applications built for <br> your needs.</p>
+        </div>
+        <div class="carousel-card">
+          <div class="icon">💻</div>
+          <h3>Full Stack Dev</h3>
+          <p>Complete development from UI to robust <br> backend systems.</p>
+        </div>
+        <div class="carousel-card">
+          <div class="icon">🔒</div>
+          <h3>Cybersecurity</h3>
+          <p>Protect your digital assets with top-notch <br> security strategies.</p>
+        </div>
+        <div class="carousel-card">
+          <div class="icon">📊</div>
+          <h3>SAP Consulting</h3>
+          <p>Certified SAP consulting for streamlined <br> operations.</p>
+        </div>
+        <div class="carousel-card">
+          <div class="icon">💡</div>
+          <h3>Tech Solutions</h3>
+          <p>Custom tech solutions to solve unique <br> business challenges.</p>
+        </div>
+      </div>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+
+<!-- ================= Projects Section ================= -->
+<section id="projects" class="projects-section">
+ <h2>My Projects</h2>
+  <div class="projects-header"> 
+    <div class="filter-wrapper">
+      <label for="filter">Filter by Domain:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="Featured">Featured</option>
+        <option value="AI">AI</option>
+        <option value="Automation">Automation</option>
+        <option value="RPA">RPA</option>
+        <option value="FullStack">Full Stack</option>
+         <option value="FullStack">SaaS</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="SAP">SAP</option>
+      </select>
+    </div>
+    <div class="search-wrapper">
+      <input type="text" id="search" placeholder="Search projects...">
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+
+<div class="project-card featured" data-domains="Featured AI">
+  <span class="star-badge">⭐ Top Pick</span>
+  <img src="assets/AI Travel Planner.jpg" alt="Top Project">
+  <h3>AI Travel Planner</h3>
+  <p>Your travel buddy who plans the best trips.</p>
+  <div class="tags">Personal Project</div>
+  <div class="tags">Tags: AI, ChatBot | Tools: Python, OpenAPI</div>
+  <div class="buttons">
+    <a href="https://github.com/annecarmel/AI-Travel-Planner" target="_blank">GitHub</a>
+    <!-- <a href="#" target="_blank">Demo</a> -->
+  </div>
+</div>
+
+<div class="project-card featured" data-domains="Featured RPA Automation">
+  <span class="star-badge">⭐ Top Pick</span>
+  <span class="award-ribbon">Awarded 🏆</span>
+  <img src="Assets/BoFivSS7pVU-SD.jpg" alt="RPA Process Automation">
+  <h3>Social Media Management Automation</h3>
+  <p>Your social media manager bot.</p>
+  <div class="tags">Bombay IIT Hackathon Project</div>
+  <div class="tags">Tags: RPA, Automation | Tools: UiPath</div>
+  <div class="buttons">
+    <a href="https://www.youtube.com/watch?v=BoFivSS7pVU" target="_blank">Demo Video</a>
+  </div>
+</div>
+
+        <!-- ✅ COMPLETED PROJECTS -->
+<div class="project-card ongoing" data-domains="FullStack">
+  <div class="coming-soon-overlay">Ongoing</div>
+  <img src="assets/ALMS.png" alt="ALMS Project Thumbnail">
+  <h3>ALMS: Advanced LMS</h3>
+  <p>A full-stack LMS — built to deliver a seamless learning experience.</p>
+  <div class="tags">Demo Project</div>
+  <div class="tags">Tags: Full Stack, SaaS, LMS | Tools: .NET, Visual Studio 2022</div>
+  <div class="buttons">
+    <a href="https://github.com/annecarmel/ALMS" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7343991032604237827/" target="_blank">Demo Video</a>
+  </div>
+</div>
+
+
+
+
+        <!-- ✅ COMPLETED PROJECTS -->
+<div class="project-card" data-domains="RPA Automation">
+  <img src="Assets/Can We Ensure Age-Inclusive Fairness in AI Innovation_.jpg" alt="Web Automation Project Thumbnail">
+  <h3>Web Automation</h3>
+  <p>Helps Automate repetitive web tasks.</p>
+  <div class="tags">Test Project</div>
+  <div class="tags">Tags: RPA, Automation | Tools: UiPath</div>
+  <div class="buttons">
+    <a href="https://github.com/annecarmel/Web-automation" target="_blank">GitHub</a>
+    <!-- No demo video yet -->
+  </div>
+</div>
+
+
+<div class="project-card" data-domains="Automation">
+  <img src="Assets/Layout and Desktop Publishing.jpg" alt="Notepad Bot Thumbnail">
+  <h3>Notepad Bot</h3>
+  <p>Automation bot to automate notepad functionality.</p>
+  <div class="tags">Demo Project</div>
+  <div class="tags">Tags: RPA, Automation | Tools: UiPath</div>
+  <div class="buttons">
+    <a href="https://github.com/annecarmel/notepad-bot" target="_blank">GitHub</a>
+    <!-- No demo yet -->
+  </div>
+</div>
+
+
+<div class="project-card" data-domains="RPA Automation">
+  <img src="Assets/Can We Ensure Age-Inclusive Fairness in AI Innovation_.jpg" alt="LMS Automation Bot Thumbnail">
+  <h3>LMS Automation Bot</h3>
+  <p>Automates Updates for LMS tasks for improved efficiency.</p>
+  <div class="tags">Hackathon Project</div>
+  <div class="tags">Tags: RPA, Automation, LMS | Tools: UiPath</div>
+  <div class="buttons">
+    <a href="https://github.com/thirish/SpiHigh-Hackathon" target="_blank">GitHub</a>
+   <a href="https://www.youtube.com/watch?v=kH5CRGo_uiM&list=PLA7eVa1MfdV5xlfdjc4PQrWt1BkfkTCKe&index=65&ab_channel=TheAnneShow" target="_blank">Demo Video</a>
+  </div>
+</div>
+
+
+<div class="project-card" data-domains="Cybersecurity">
+  <img src="Assets/What is an Intrusion Detection System.jpg" alt="Intrusion Detection System Thumbnail">
+  <h3>Intrusion Detection System</h3>
+  <p>Monitors network traffic and detect malicious activities.</p>
+  <div class="tags">Prototype Project</div>
+  <div class="tags">Tags: Cybersecurity, IDS | Tools: Python</div>
+  <div class="buttons">
+    <a href="#" class="disabled">GitHub</a>
+    <a href="#" class="disabled">Demo</a>
+  </div>
+</div>
+
+
+    <div class="project-card" data-domains="FullStack">
+  <img src="Assets/Top LMS Development Company _ Custom eLearning Solutions.jpg" alt="Internship LMS Project Thumbnail">
+  <h3>LMS: Internship Project</h3>
+  <p>A full-stack LMS built during my internship.</p>
+  <div class="tags">Team Project, Internship</div>
+  <div class="tags">Tags: Full Stack, SaaS, LMS | Tools: ASP.NET, Visual Studio, MySQL</div>
+  <div class="buttons">
+    <a href="https://github.com/annecarmel/LMS-AInsurTech-Internship-Project" target="_blank">GitHub</a>
+    <!-- <a href="#" target="_blank">Demo</a> -->
+  </div>
+</div>
+
+        <!-- ✅ UPCOMING PROJECTS -->
+    <div class="project-card upcoming" data-domains="SaaS FullStack">
+      <div class="coming-soon-overlay">Coming Soon</div>
+      <img src="Assets/BusTracker.jpg" alt="Upcoming Project">
+      <h3>School Bus Safety Tracker</h3>
+      <p>Launching soon!</p>
+       <div class="tags">Demo Project, Prototype</div>
+      <div class="tags">Tags: FullStack, Saas, Tracking</div>
+      <div class="buttons">
+        <a href="#" class="disabled">GitHub</a>
+        <a href="#" class="disabled">Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card upcoming" data-domains="AI SaaS">
+      <div class="coming-soon-overlay">Coming Soon</div>
+      <img src="assets/AI Homework Tutorship.jpg" alt="Upcoming Project">
+      <h3>AI Kindergarten Buddy</h3>
+      <p>Launching Soon!</p>
+      <div class="tags">Personal Project, Prototype</div>
+      <div class="tags">Tags: AI, EdTech, SaaS</div>
+      <div class="buttons">
+        <a href="#" class="disabled">GitHub</a>
+        <a href="#" class="disabled">Demo</a>
+      </div>
+    </div>
+
+<div class="project-card upcoming" data-domains="SAP SaaS">
+  <div class="coming-soon-overlay">Coming Soon</div>
+  <img src="assets/Everything You Need to Know About SAP.jpg" alt="Upcoming Project">
+  <h3>SAP Smart Process Hub</h3>
+  <p>Launching Soon!</p>
+  <div class="tags">Enterprise Project, Prototype</div>
+  <div class="tags">Tags: SAP, ABAP, ERP, Business Automation, SaaS</div>
+  <div class="buttons">
+    <a href="#" class="disabled">GitHub</a>
+    <a href="#" class="disabled">Demo</a>
+  </div>
+</div>
+
+<div class="project-card upcoming" data-domains="AI SaaS">
+  <div class="coming-soon-overlay">Coming Soon</div>
+  <img src="assets/AI Lawyer.jpg" alt="Upcoming Project">
+  <h3>AI Pocket Lawyer</h3>
+  <p>Launching soon!</p>
+  <div class="tags">Personal Project, Prototype</div>
+  <div class="tags">Tags: AI, LawTech, CivicTech, SaaS</div>
+  <div class="buttons">
+    <a href="#" class="disabled">GitHub</a>
+    <a href="#" class="disabled">Demo</a>
+  </div>
+</div>
+
+
+<div class="project-card upcoming" data-domains="AI SaaS">
+  <div class="coming-soon-overlay">Coming Soon</div>
+  <img src="assets/Face Reg Event.jpg" alt="Upcoming Project">
+  <h3>Facial recognition system for event management</h3>
+  <p>Launching Soon!</p>
+  <div class="tags">Personal Project, Prototype</div>
+  <div class="tags">Tags: AI, EdTech, SaaS</div>
+  <div class="buttons">
+    <a href="#" class="disabled">GitHub</a>
+    <a href="#" class="disabled">Demo</a>
+  </div>
+</div>
+
+  </div>
+
+  <button class="load-more">Load More</button>
+</section>
+
+<!-- === PROJECT DOCUMENTARY SECTION === -->
+<section id="project-docu" class="project-docu-section">
+  <h2>Project Documentaries</h2>
+  <div class="docu-carousel-wrapper">
+    <button class="docu-carousel-btn prev">&#10094;</button>
+    <div class="docu-carousel">
+      <!-- Slide 1 -->
+<!-- Slide 1 -->
+<div class="docu-card">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/Cl4uaIT6BGU" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h3>LMS Automation Bot</h3>
+  <p>Watch how this bot automates repetitive LMS tasks for better efficiency and time savings.</p>
+</div>
+
+<!-- Slide 2 -->
+<div class="docu-card">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/BoFivSS7pVU" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h3>RPA Social Media Manager</h3>
+  <p>See how the RPA bot automates social media content scheduling and management tasks.</p>
+</div>
+
+<!-- Slide 3 -->
+<div class="docu-card">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/_sy3LsiVXRU" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h3>Extra Mural Lecture</h3>
+  <p>Listen to my talk on the subconscious mind and how it shapes human behaviour and growth.</p>
+</div>
+
+    </div>
+    <button class="docu-carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+<!-- ================= Testimonials Section ================= -->
+<section id="testimonials" class="testimonials-section">
+  <h2 class="section-title">Testimonials</h2>
+  <div class="testimonials-row">
+    <div class="testimonial-card">
+      <p class="testimonial-text">“Absolutely loved working with you! Professional, creative, and reliable.”</p>
+      <div class="stars">★★★★★</div>
+      <h4 class="testimonial-name">— Niranjena</h4>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">“Your work exceeded our expectations. Highly recommend!”</p>
+      <div class="stars">★★★★☆</div>
+      <h4 class="testimonial-name">— James Antony, Internship Mentor</h4>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">“A true problem solver. Delivered ahead of schedule!”</p>
+      <div class="stars">★★★★★</div>
+      <h4 class="testimonial-name">— Alex Chako</h4>
+    </div>
+    <!-- ✅ Add more cards as needed -->
+     
+    <div class="testimonial-card">
+      <p>"This AI tool transformed my classroom! The kids love it."</p>
+      <div class="stars">★★★★★</div>
+      <h4>- Mrs. Latha, Kindergarten Teacher</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Working with Anne was an absolute delight. Her ideas are brilliant and execution is flawless."</p>
+      <div class="stars">★★★★☆</div>
+      <h4>- Sarah pandy, Team Mate</h4>
+    </div>
+
+
+</section>
+
+
+
+<!-- ============== Certifications Gallery Section ============== -->
+<section id="certifications" class="certifications-section">
+  <h2>My Certifications</h2>
+  <div class="certification-gallery">
+
+    <div class="cert-card">
+      <img src="Assets/AIDubai.png" alt="AI Certification Dubai">
+    </div>
+        <div class="cert-card">
+      <img src="Assets/SoftwareDevelop.png" alt="SE Certification">
+    </div>
+    <div class="cert-card">
+      <img src="Assets/Cyber.png" alt="CYber Certification">
+    </div>
+        <div class="cert-card">
+      <img src="Assets/ethicalhacking.png" alt="ethicalhacking Certification">
+    </div>
+    <div class="cert-card">
+      <img src="Assets/aws.png" alt="Full Stack Certification">
+    </div>
+        <div class="cert-card">
+      <img src="Assets/National Level.png" alt="Hackathon Certification">
+    </div>
+    <div class="cert-card">
+      <img src="Assets/RPA.png" alt="RPA Certification">
+    </div>
+    <!-- Add more cert-card divs if you want! -->
+  </div>
+</section>
+
+<!-- ================= About & Contact Section ================= -->
+<section id="about-contact" class="about-contact-section">
+  <div class="about-contact-container">
+    
+    <!-- === About Me === -->
+    <div class="about-me">
+      <h2>About Me</h2>
+  <p>
+    Hi, I'm Anne Carmel — an AI enthusiast and aspiring global talent.
+    I love creating innovative solutions, from designing websites to developing AI tools and automation bots.
+    I'm an MCA graduate specialized in Software Engineering, AI, and Automation, with a strong foundation in real-world projects and certifications.
+    My mission is to build transformative technologies and lead meaningful ventures that shape a better tomorrow.
+  </p>
+      <p>
+        🎓 MCA | 🤖 AI & RPA Developer | 🏆 Certified Professional
+      </p>
+<br>
+
+      <!-- === Social & Contact Icons === -->
+<div class="social-icons">
+  <a href="https://www.linkedin.com/in/annecarmel03/" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/annecarmel" target="_blank" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="tel:+916380332407" aria-label="Phone">
+    <i class="fas fa-phone"></i>
+  </a>
+  <a href="mailto:annecarmel.ae@gmail.com" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.youtube.com/@annecarmel" target="_blank" aria-label="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://www.instagram.com/vividlyanne/reels/" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+   
+
+</div>
+
+
+
+    </div>
+
+
+    <!-- === Contact Me === -->
+    
+    <div class="contact-me">
+      <h2>Contact Me</h2>
+      <form id="contactForm" method="post">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <p>© 2025 Developed and Owned by Anne Carmel. All rights reserved. 💙</p>
+</footer>
+
+
+  <script src="script.js" defer></script>
+  <script>
+    // === Typewriter effect ===
+    const roles = [
+      { text: "Full Stack Software Developer.", color: "#00ffff" },
+      { text: "Cybersecurity Specialist.", color: "#00ff00" },
+      { text: "Automation Consultant.", color: "#ffa500" },
+      { text: "AI and ML Engineer.", color: "#ff4500" },
+      { text: "Tech Solution Consultant.", color: "#1e90ff" },
+      { text: "Software Engineer.", color: "#ff00ff" },
+      { text: "Certified SAP Consultant.", color: "#ff1493" }
+    ];
+    let i = 0, txt = '', isDeleting = false, speed = 100;
+    function type() {
+      const roleObj = roles[i % roles.length];
+      const fullText = roleObj.text;
+      const display = document.getElementById("typewriter-text");
+      if (isDeleting) txt = fullText.substring(0, txt.length - 1);
+      else txt = fullText.substring(0, txt.length + 1);
+      display.textContent = txt;
+      display.style.color = roleObj.color;
+      if (!isDeleting && txt === fullText) setTimeout(() => isDeleting = true, 1000);
+      else if (isDeleting && txt === '') { isDeleting = false; i++; }
+      setTimeout(type, isDeleting ? speed / 2 : speed);
+    }
+    window.onload = type;
+
+    // === Navbar hide/show ===
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      const navbar = document.getElementById("navbar");
+      if (prevScrollpos > currentScrollPos) navbar.style.top = "0";
+      else navbar.style.top = "-100px";
+      prevScrollpos = currentScrollPos;
+    };
+  </script>
+</body>
+</html>
