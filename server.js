@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
 
 // Serve static files from your project folder
 app.use(express.static('public'));
@@ -35,8 +34,9 @@ app.post('/contact', (req, res) => {
   res.json({ success: true });
 });
 
-const PORT = process.env.PORT || 3000; // Use the PORT environment variable on Render
+// ✅ Only ONE PORT declaration:
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
-
