@@ -836,5 +836,57 @@ footer {
   color: #00ffff;          /* Same click effect */
 }
 
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  /* Navbar stacks links vertically */
+  nav .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Hero or overlay section stacks vertically */
+  .overlay {
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    text-align: center;
+  }
+
+  .left, 
+  .right {
+    max-width: 100%;
+  }
+
+  .right img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  /* Projects grid goes to single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Carousel scrolls horizontally on mobile */
+  .carousel {
+    overflow-x: scroll;
+  }
+
+  /* Documentary carousel cards fit screen */
+  .docu-card {
+    width: 90%;
+  }
+
+  /* About & Contact sections stack vertically */
+  .about-contact-container {
+    flex-direction: column;
+  }
+
+  /* Footer gets smaller padding & font */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.85rem;
+  }
+}
 
 
