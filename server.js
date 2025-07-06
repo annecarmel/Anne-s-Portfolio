@@ -5,13 +5,13 @@ const path = require('path');
 const app = express();
 
 // Serve static files from your project folder
-app.use(express.static('public'));
+app.use(express.static('Public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ✅ EXPLICIT ROOT ROUTE
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
 // API route to handle your Contact Me form
